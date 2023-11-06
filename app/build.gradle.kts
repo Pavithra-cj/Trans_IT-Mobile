@@ -26,6 +26,9 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+    buildFeatures{
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -36,4 +39,29 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+    //Scalable Size Unit (support for different screen size)
+
+    implementation("com.intuit.sdp:sdp-android:1.0.6")
+    implementation("com.intuit.ssp:ssp-android:1.0.6")
+
+    //Rounded Image View
+    implementation("com.makeramen:roundedimageview:2.3.0")
+
+    //MultiDex
+    implementation("androidx.multidex:multidex:2.0.1")
+
+    implementation("com.android.volley:volley:1.2.0")
+    implementation("io.github.chaosleung:pinview:1.4.4")
+
+    // adding volley dependency
+    implementation("com.android.volley:volley:1.2.1")
+
+    //QR code
+    implementation("com.google.zxing:core:3.4.1")
+    implementation("com.journeyapps:zxing-android-embedded:4.2.0")
+
+    //location
+    implementation("com.google.android.gms:play-services-location:21.0.1")
+
 }
