@@ -140,8 +140,8 @@ public class LoginActivity extends AppCompatActivity {
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, apiUrl, postData,
                 response -> {
                     loading(false);
-//                    binding.inputEmail.setText("");
-//                    binding.inputPassword.setText("");
+                    binding.inputEmail.setText("");
+                    binding.inputPassword.setText("");
                     try {
                         String message = response.getString("token");
                         Log.d(TAG, "Response: " + response.toString());

@@ -3,6 +3,8 @@ package lk.nibm.furious5.scorpio.transit.Activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 import android.Manifest;
@@ -36,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
     private FusedLocationProviderClient fusedLocationProviderClient;
     private static final int REQUEST_CODE = 100;
 
+    private Double lat, lon;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         bottomNav = findViewById(R.id.bottomNav);
 
         HomeFragment homeFragment = new HomeFragment();
-        Fragment buyTicketsFragment = new QrCodeFragment();
+        Fragment qrCodeFragment = new QrCodeFragment();
         Fragment peoplesFragment = new PeoplesFragment();
 
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
@@ -59,9 +63,9 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 Fragment selectedFragment = null;
                 if (item.getItemId() == R.id.home) {
-                    selectedFragment = homeFragment;
+                    selectedFragment = HomeFragment.newInstance(token);
                 } else if (item.getItemId() == R.id.qr) {
-                    selectedFragment = buyTicketsFragment;
+                    selectedFragment = QrCodeFragment.newInstance(lat, lon, token);
                 } else if (item.getItemId() == R.id.friend) {
                     selectedFragment = peoplesFragment;
                 }
@@ -95,8 +99,10 @@ public class MainActivity extends AppCompatActivity {
                                 try {
                                     addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
                                     if (addresses != null && addresses.size() > 0) {
-                                        showToast("Lat: " + addresses.get(0).getLatitude());
-                                        showToast("Long: " + addresses.get(0).getLongitude());
+//                                        showToast("Lat: " + addresses.get(0).getLatitude());
+//                                        showToast("Long: " + addresses.get(0).getLongitude());
+                                        lat = addresses.get(0).getLatitude();
+                                        lon = addresses.get(0).getLongitude();
                                     } else {
                                         showToast("Unable to get location");
                                     }
@@ -129,4 +135,5 @@ public class MainActivity extends AppCompatActivity {
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
+
 }

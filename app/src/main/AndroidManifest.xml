@@ -21,6 +21,15 @@
         android:theme="@style/Theme.TransITMobile"
         tools:targetApi="31">
         <activity
+            android:name=".Activities.DetailsPackageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.PackagesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.AccDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activities.BuyTicketActivity"
             android:exported="false" />
         <activity

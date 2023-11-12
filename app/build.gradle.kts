@@ -51,7 +51,6 @@ dependencies {
     //MultiDex
     implementation("androidx.multidex:multidex:2.0.1")
 
-    implementation("com.android.volley:volley:1.2.0")
     implementation("io.github.chaosleung:pinview:1.4.4")
 
     // adding volley dependency
@@ -64,4 +63,12 @@ dependencies {
     //location
     implementation("com.google.android.gms:play-services-location:21.0.1")
 
+    //RecyclerView
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
+
+    //CardView
+    implementation("androidx.cardview:cardview:1.0.0")
+
+    //Picasso
+    implementation("com.squareup.picasso:picasso:2.5.2")
 }
