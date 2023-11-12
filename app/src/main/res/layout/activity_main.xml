@@ -6,21 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".Activities.MainActivity">
 
-    <FrameLayout
-        android:id="@+id/homeContainer"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/bottomNav"/>
+        android:layout_height="match_parent">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNav"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_40sdp"
-        android:background="@drawable/navbar_bg"
-        android:layout_alignParentBottom="true"
-        app:menu="@menu/menu_item"
-        app:itemIconTint="@drawable/item_active"
-        app:itemIconSize="@dimen/_18sdp"
-        app:labelVisibilityMode="unlabeled"/>
+        <FrameLayout
+            android:id="@+id/homeContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bottomNav"/>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNav"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@drawable/navbar_bg"
+            android:layout_alignParentBottom="true"
+            app:menu="@menu/menu_item"
+            app:itemIconTint="@drawable/item_active"
+            app:itemIconSize="@dimen/_18sdp"
+            app:labelVisibilityMode="unlabeled"/>
+
+    </RelativeLayout>
 
 </RelativeLayout>

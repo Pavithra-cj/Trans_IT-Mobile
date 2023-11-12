@@ -111,36 +111,6 @@
             android:textStyle="bold"
             app:cornerRadius="@dimen/_8sdp"/>
 
-        <TextView
-            android:id="@+id/txtTest"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:text="Test"
-            android:textColor="@color/secondary_text"
-            android:textSize="@dimen/_18ssp"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:id="@+id/txtLang"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:text="lang"
-            android:textColor="@color/secondary_text"
-            android:textSize="@dimen/_18ssp"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:id="@+id/txtLat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:text="lat"
-            android:textColor="@color/secondary_text"
-            android:textSize="@dimen/_18ssp"
-            android:textStyle="bold"/>
-
     </LinearLayout>
 
 </ScrollView>
