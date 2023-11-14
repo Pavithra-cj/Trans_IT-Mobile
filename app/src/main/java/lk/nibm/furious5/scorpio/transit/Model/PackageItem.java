@@ -5,11 +5,13 @@ public class PackageItem {
     private String iPkgName;
     private String iCreditPoints;
     private String iPrice;
+    private String iPkgId;
 
-    public PackageItem(String iPkgName, String iCreditPoints, String iPrice) {
+    public PackageItem(String iPkgName, String iCreditPoints, String iPrice, String iPkgId) {
         this.iPkgName = iPkgName;
         this.iCreditPoints = iCreditPoints;
         this.iPrice = iPrice;
+        this.iPkgId = iPkgId;
     }
 
     public String getiPkgName() {
@@ -34,5 +36,9 @@ public class PackageItem {
 
     public void setiPrice(String iPrice) {
         this.iPrice = iPrice;
+    }
+    public String getiPkgId()
+    {
+        return iPkgId;
     }
 }

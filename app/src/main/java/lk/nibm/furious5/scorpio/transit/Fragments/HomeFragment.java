@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import lk.nibm.furious5.scorpio.transit.Activities.AccDetailsActivity;
 import lk.nibm.furious5.scorpio.transit.Activities.PackagesActivity;
 import lk.nibm.furious5.scorpio.transit.R;
 import lk.nibm.furious5.scorpio.transit.databinding.FragmentHomeBinding;
@@ -19,6 +20,7 @@ public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
     private static final String ARG_TOKEN = "token";
+
     private String token;
 
     public static HomeFragment newInstance(String token) {
@@ -49,6 +51,15 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(requireContext(), PackagesActivity.class);
+                intent.putExtra(ARG_TOKEN, token);
+                startActivity(intent);
+            }
+        });
+
+        binding.imgProp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(requireContext(), AccDetailsActivity.class);
                 intent.putExtra(ARG_TOKEN, token);
                 startActivity(intent);
             }

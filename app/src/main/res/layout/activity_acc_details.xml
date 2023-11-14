@@ -8,7 +8,178 @@
     android:background="@drawable/home_bg"
     android:gravity="center_horizontal"
     android:orientation="vertical">
+    
+    <LinearLayout
+        android:layout_width="@dimen/_270sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/rectangle"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
 
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:src="@drawable/logo" />
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="@dimen/_270sdp"
+        android:layout_height="@dimen/_350sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:background="@drawable/rectangle"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/imgProPic"
+            android:layout_width="@dimen/_65sdp"
+            android:layout_height="@dimen/_65sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:src="@drawable/pp"
+            android:background="@drawable/background_image"
+            android:scaleType="centerCrop"
+            app:riv_oval="true"/>
+
+        <LinearLayout
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_180sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:background="@drawable/bg_rec">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Name"
+                android:textColor="@color/white"
+                android:textStyle="italic"/>
+
+            <TextView
+                android:id="@+id/txtUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:text="User Name"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Email"
+                android:textColor="@color/white"
+                android:textStyle="italic"/>
+
+            <TextView
+                android:id="@+id/txtEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:text="useremail@gmail.com"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Mobile Number"
+                android:textColor="@color/white"
+                android:textStyle="italic"/>
+
+            <TextView
+                android:id="@+id/txtNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:text="+94 777777777"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Join Date"
+                android:textColor="@color/white"
+                android:textStyle="italic"/>
+
+            <TextView
+                android:id="@+id/joinDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:text="2023-10-28"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:background="@drawable/bg_rec">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Credit Points"
+                android:textColor="@color/white"
+                android:textStyle="italic"/>
+
+            <TextView
+                android:id="@+id/txtCPoints"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:text="0.00"
+                android:textColor="@color/colorRed"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnPayHis"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:text="Payment History"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_10ssp"
+        android:textStyle="bold"
+        app:cornerRadius="@dimen/_8sdp"
+        android:background="@drawable/bg_rec"
+        android:layout_marginTop="@dimen/_20sdp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnBookingHis"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:text="Ticket Booking History"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_10ssp"
+        android:textStyle="bold"
+        app:cornerRadius="@dimen/_8sdp"
+        android:background="@drawable/bg_rec"
+        android:layout_marginTop="@dimen/_15sdp"/>
 
 </LinearLayout>

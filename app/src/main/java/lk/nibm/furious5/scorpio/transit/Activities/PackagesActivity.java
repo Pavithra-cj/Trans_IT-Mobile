@@ -28,7 +28,14 @@ import lk.nibm.furious5.scorpio.transit.Adapters.ItemAdapter;
 import lk.nibm.furious5.scorpio.transit.Model.PackageItem;
 import lk.nibm.furious5.scorpio.transit.R;
 
-public class PackagesActivity extends AppCompatActivity {
+public class PackagesActivity extends AppCompatActivity implements ItemAdapter.OnItemClickListner {
+
+    public static final String EXTRA_PACKAGE = "pkgName";
+    public static final String EXTRA_CREDIT = "credits";
+    public static final String EXTRA_PRICE = "price";
+    public static final String EXTRA_TOKEN = "token";
+    public static final String EXTRA_ID = "id";
+
     private static final String ARG_TOKEN = "token";
     private RecyclerView itemRecyclerView;
     private ItemAdapter itemAdapter;
@@ -54,7 +61,6 @@ public class PackagesActivity extends AppCompatActivity {
         if (intent != null && intent.hasExtra(ARG_TOKEN)) {
             String token = intent.getStringExtra(ARG_TOKEN);
             this.token = token;
-            showToast("Token: " + token);
         } else {
             showToast("Token not found");
         }
@@ -89,11 +95,13 @@ public class PackagesActivity extends AppCompatActivity {
                                 String pkgName = jsonObject.getString("name");
                                 String credits = jsonObject.getString("credit_points");
                                 String price = jsonObject.getString("price");
+                                String pkgId = jsonObject.getString("id");
 
-                                packageList.add(new PackageItem(pkgName, credits, price));
+                                packageList.add(new PackageItem(pkgName, credits, price, pkgId));
 
                                 itemAdapter = new ItemAdapter(PackagesActivity.this, packageList);
                                 itemRecyclerView.setAdapter(itemAdapter);
+                                itemAdapter.setOnClickListner(PackagesActivity.this);
 
                             }
                         } catch (JSONException e) {
@@ -118,4 +126,18 @@ public class PackagesActivity extends AppCompatActivity {
         requestQueue.add(request);
     }
 
+    @Override
+    public void onItemClick(int position) {
+        Intent detailIntent = new Intent(this, DetailsPackageActivity.class);
+        PackageItem clickedItem = packageList.get(position);
+
+        detailIntent.putExtra(EXTRA_PACKAGE, clickedItem.getiPkgName());
+        detailIntent.putExtra(EXTRA_CREDIT, clickedItem.getiCreditPoints());
+        detailIntent.putExtra(EXTRA_PRICE, clickedItem.getiPrice());
+        detailIntent.putExtra(EXTRA_ID, clickedItem.getiPkgId());
+        detailIntent.putExtra(EXTRA_TOKEN, token);
+
+        startActivity(detailIntent);
+
+    }
 }
