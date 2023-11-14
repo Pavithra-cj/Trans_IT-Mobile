@@ -25,4 +25,10 @@
     <string name="mobile_number">Mobile Number</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="payment_methods">
+        <item>card</item>
+        <item>PayPal</item>
+    </string-array>
+
 </resources>

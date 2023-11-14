@@ -18,6 +18,16 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.itemViewHolder
 
     private Context iContext;
     private ArrayList<PackageItem> packageItemsList;
+    private OnItemClickListner itemListner;
+
+    public interface OnItemClickListner{
+        void onItemClick(int position);
+    }
+
+    public void setOnClickListner(OnItemClickListner listner)
+    {
+        itemListner = listner;
+    }
 
     public ItemAdapter(Context context, ArrayList<PackageItem> packageList){
         iContext = context;
@@ -61,6 +71,20 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.itemViewHolder
             iPkgName = itemView.findViewById(R.id.txtPackageName);
             iCreditPoints = itemView.findViewById(R.id.txtCreditPoints);
             iPrice = itemView.findViewById(R.id.txtPrice);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (itemListner != null)
+                    {
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION)
+                        {
+                            itemListner.onItemClick(position);
+                        }
+                    }
+                }
+            });
 
         }
     }
